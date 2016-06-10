@@ -52,10 +52,9 @@ Once Finished, www.testdevops.com will be routed to https://www.testdevops.com. 
 #####
 #Alternate Solution using apache redirect
 #####
- 1. Please note that the redirect of https to https can be created by using the VirualHost Solution provided by apache itself.
+ 1. Please note that the redirect of http to https can be created by using the VirualHost Solution provided by apache itself.
  2. under /etc/httpd/conf.d, we can create a index.conf file with redirect rules
- 3. place this file on master server in a puppet configuration.
- 4. Apply redirect.pp to agents to ensure consitency across all web servers.
+ 3. Apply Class redirect.pp to Master Server via PE console. Let the class be applied to agents either automatically or manual run via  	PE console.
 
 
 
