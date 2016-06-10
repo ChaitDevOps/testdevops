@@ -56,6 +56,13 @@ Once Finished, www.testdevops.com will be routed to https://www.testdevops.com. 
  2. under /etc/httpd/conf.d, we can create a index.conf file with redirect rules
  3. Apply Class redirect.pp to Master Server via PE console. Let the class be applied to agents either automatically or manual run via  	PE console.
 
+###Scalability###
+ 1. I've set up an Auto Scaling group "Testdevops" that receives traffic from the LoadBalancer "MyWebLoadBalancer".
+ 2. The AutoScaling Group creates instances from a min 2 to max 4 instances when Scaling Policy is triggered.
+ 3. Scaling Policy :
+ 		a. Increase Group Size by 1 instance when CPU Utilization is > 95%
+ 		b. Decrease Group Size by 1 instance when CPU Utilization is < 5% 
+ 4. Warm Up time between instances = 300s.
 
 
 
